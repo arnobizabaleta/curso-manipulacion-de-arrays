@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='app'></div>
+    <script>
+        const tasks = [{
+        title: 'Do laundry',
+        description: 'Lorem ipsum dolor sit amet.',
+        status: true,
+      },
+      {
+        title: 'Go to the gym',
+        description: 'Lorem ipsum dolor sit amet.',
+        status: true,
+      },
+      {
+        title: 'Do homework',
+        description: 'Lorem ipsum dolor sit amet.',
+        status: false,
+      },
+    ]
+    let nodes = document.createElement('ul');
+    const app = document.getElementById('app');
+    tasks.forEach(task => {
+      const element = `
+        <li> 
+          <input type="checkbox" ${task.status ? 'checked' : ''}>
+          ${task.title} - ${task.description}
+        </li>
+      `;
+      nodes.innerHTML += element;
+    });
+
+    app.append(nodes);
+    </script>
+    
+</body>
+</html>
+
