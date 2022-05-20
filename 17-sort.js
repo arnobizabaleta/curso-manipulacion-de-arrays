@@ -45,3 +45,19 @@ Si compareFn(a, b) devuelve un valor mayor que 0, ordena b antes a.
 Si compareFn(a, b) devuelve un valor menor que 0, ordena a antes b.
 Si compareFn(a, b) devuelve 0 a y b se consideran iguales.
 */
+
+//Ordenar alfabeticamaente un string
+//Crear una  funcion para ordenar caracteres de forma alfabética
+function ordernarAlfabeticamente(texto){
+  if(typeof texto !== "string"){
+    throw TypeError("El argumento debe ser una cadena de caracteres.");
+  }
+  return[...texto].sort((a,b)=>a.localeCompare(b)).join("");
+
+}
+let cadena = "Javascript";
+
+console.log(ordernarAlfabeticamente("Javascript"));
+
+// Sin poner (a,b)=>a.localeCompare(b) dentro del sort()
+//La funcion de ordenamiento se ve afectada por mayusculas

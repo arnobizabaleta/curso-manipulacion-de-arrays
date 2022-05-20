@@ -19,6 +19,7 @@ const rta = items.reduce((obj, item) => {
 
 console.log(rta);
 
+
 const data = [
     {
       name: "Nicolas",
